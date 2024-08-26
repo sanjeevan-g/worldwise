@@ -72,6 +72,7 @@ export default function Form() {
     if (!cityName || !date) return;
 
     let newCity = {
+      id: parseInt(Date.now() * Math.random()).toString(),
       cityName,
       country,
       emoji,
@@ -99,7 +100,7 @@ export default function Form() {
 
   return (
 
-    <form className={ `${styles.form} ${isLoading ? styles.loading : ''} `} onSubmit={ handleSubmit } >
+    <form className={ `${styles.form} ${isLoading ? styles.loading : ''} ` } onSubmit={ handleSubmit } >
       <div className={ styles.row }>
         <label htmlFor="cityName">City name</label>
         <input

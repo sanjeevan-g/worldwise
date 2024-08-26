@@ -54,7 +54,7 @@ function CitiesProvider({ children }) {
         async function getCities() {
             dispatch({ type: "loading" });
             try {
-                const res = await fetch("https://worldwise-one-tau.vercel.app/api/cities");
+                const res = await fetch("https://worldwise-ten-sage.vercel.app/api/cities");
                 if (!res.ok) throw new Error("Something went wrong");
                 const data = await res.json();
                 dispatch({
@@ -73,7 +73,7 @@ function CitiesProvider({ children }) {
         dispatch({ type: "loading" });
         try {
             const res = await fetch(
-                `https://worldwise-one-tau.vercel.app/api/cities?id=${id}`
+                `https://worldwise-ten-sage.vercel.app/api/cities?id=${id}`
             );
             if (!res.ok) throw new Error("Something went wrong");
             const data = await res.json();
@@ -86,7 +86,7 @@ function CitiesProvider({ children }) {
     async function createCity(newCity) {
         dispatch({ type: "loading" });
         try {
-            const res = await fetch(`https://worldwise-one-tau.vercel.app/api/cities`, {
+            const res = await fetch(`https://worldwise-ten-sage.vercel.app/api/cities`, {
                 method: "POST",
                 body: JSON.stringify(newCity),
                 headers: {
@@ -105,7 +105,7 @@ function CitiesProvider({ children }) {
         dispatch({ type: "loading" });
         try {
             const res = await fetch(
-                `https://worldwise-one-tau.vercel.app/api/cities?id=${id}`,
+                `https://worldwise-ten-sage.vercel.app/api/cities?id=${id}`,
                 {
                     method: "DELETE",
                 }
